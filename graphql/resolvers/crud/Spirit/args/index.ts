@@ -1,0 +1,12 @@
+export { AggregateSpiritArgs } from "./AggregateSpiritArgs";
+export { CreateManySpiritArgs } from "./CreateManySpiritArgs";
+export { CreateSpiritArgs } from "./CreateSpiritArgs";
+export { DeleteManySpiritArgs } from "./DeleteManySpiritArgs";
+export { DeleteSpiritArgs } from "./DeleteSpiritArgs";
+export { FindFirstSpiritArgs } from "./FindFirstSpiritArgs";
+export { FindManySpiritArgs } from "./FindManySpiritArgs";
+export { FindUniqueSpiritArgs } from "./FindUniqueSpiritArgs";
+export { GroupBySpiritArgs } from "./GroupBySpiritArgs";
+export { UpdateManySpiritArgs } from "./UpdateManySpiritArgs";
+export { UpdateSpiritArgs } from "./UpdateSpiritArgs";
+export { UpsertSpiritArgs } from "./UpsertSpiritArgs";

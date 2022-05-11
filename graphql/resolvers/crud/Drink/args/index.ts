@@ -1,0 +1,12 @@
+export { AggregateDrinkArgs } from "./AggregateDrinkArgs";
+export { CreateDrinkArgs } from "./CreateDrinkArgs";
+export { CreateManyDrinkArgs } from "./CreateManyDrinkArgs";
+export { DeleteDrinkArgs } from "./DeleteDrinkArgs";
+export { DeleteManyDrinkArgs } from "./DeleteManyDrinkArgs";
+export { FindFirstDrinkArgs } from "./FindFirstDrinkArgs";
+export { FindManyDrinkArgs } from "./FindManyDrinkArgs";
+export { FindUniqueDrinkArgs } from "./FindUniqueDrinkArgs";
+export { GroupByDrinkArgs } from "./GroupByDrinkArgs";
+export { UpdateDrinkArgs } from "./UpdateDrinkArgs";
+export { UpdateManyDrinkArgs } from "./UpdateManyDrinkArgs";
+export { UpsertDrinkArgs } from "./UpsertDrinkArgs";
