@@ -1,10 +1,10 @@
 import 'reflect-metadata';
+import express from 'express';
+import { createServer } from 'http';
 import { buildSchema } from 'type-graphql';
+import { ApolloServer } from 'apollo-server-express';
 import { resolvers } from '../graphql';
 import { prisma } from '../prisma';
-import { createServer } from 'http';
-import express from 'express';
-import { ApolloServer, gql } from 'apollo-server-express';
 
 const PORT = process.env.PORT || 4000;
 
@@ -31,7 +31,9 @@ const startServer = async () => {
 
   // 8
   httpServer.listen({ port: process.env.PORT || 4000 }, () =>
-    console.log(`Server listening on localhost:4000${apolloServer.graphqlPath}`)
+    console.log(
+      `Server listening on http::/localhost:4000${apolloServer.graphqlPath}`
+    )
   );
 };
 
