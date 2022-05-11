@@ -26,7 +26,7 @@ const startServer = async () => {
 
   apolloServer.applyMiddleware({
     app,
-    // path: '/graphql',
+    path: '/api',
   });
 
   // 8
