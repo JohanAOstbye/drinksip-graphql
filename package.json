@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon",
-    "start": "nodemon",
-    "build": ""
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/index.js"
   },
   "dependencies": {
     "@prisma/client": "^3.14.0",
@@ -24,7 +24,8 @@
     "reflect-metadata": "^0.1.13",
     "tslib": "^2.4.0",
     "type-graphql": "^1.1.1",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.16",
