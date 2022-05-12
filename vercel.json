@@ -5,5 +5,5 @@
       "dest": "src/index.js"
     }
   ],
-  "functions": { "/*": { "runtime": "@vercel/node" } }
+  "functions": { "*": { "runtime": "@vercel/node" } }
 }
