@@ -30,7 +30,7 @@ const start = async () => {
   });
 
   app.get('/', (req, res) => {
-    res.send('Hello world!');
+    res.send('Moren din!');
   });
 
   app.listen(8080, () => {
