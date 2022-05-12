@@ -3,22 +3,28 @@ import express from 'express';
 import { createServer } from 'http';
 import { buildSchema } from 'type-graphql';
 import { ApolloServer } from 'apollo-server-express';
+import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
+import http from 'http';
+import cors from 'cors';
 import { resolvers } from '../graphql';
 import { prisma } from '../prisma';
+import { Express } from 'express-serve-static-core';
 
 const PORT = process.env.PORT || 4000;
 
-const startServer = async () => {
-  const app = express();
-  const httpServer = createServer(app);
+const app = express();
+app.use(cors());
+app.use(express.json());
+export const httpServer = createServer(app);
 
+const startServer = async (app: Express, httpServer: http.Server) => {
   const schema = await buildSchema({
     resolvers,
   });
 
   const apolloServer = new ApolloServer({
     schema,
-
+    plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
     context: () => ({ prisma }),
   });
 
@@ -26,15 +32,9 @@ const startServer = async () => {
 
   apolloServer.applyMiddleware({
     app,
-    path: '/api',
   });
-
-  // 8
-  httpServer.listen({ port: process.env.PORT || 4000 }, () =>
-    console.log(
-      `Server listening on http::/localhost:4000${apolloServer.graphqlPath}`
-    )
-  );
 };
 
-startServer();
+startServer(app, httpServer);
+
+export default httpServer;
