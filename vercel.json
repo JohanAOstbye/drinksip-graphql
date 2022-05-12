@@ -4,5 +4,6 @@
       "src": "/(.*)",
       "dest": "src/index.js"
     }
-  ]
+  ],
+  "functions": { "/": { "runtime": "@vercel/node" } }
 }
