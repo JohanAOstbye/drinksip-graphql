@@ -70,4 +70,9 @@ export class SpiritScalarWhereWithAggregatesInput {
     nullable: true
   })
   type?: EnumSpiritTypeWithAggregatesFilter | undefined;
+
+  @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
+    nullable: true
+  })
+  image?: StringNullableWithAggregatesFilter | undefined;
 }

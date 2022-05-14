@@ -67,6 +67,11 @@ export class Spirit {
   })
   type!: "WINE" | "BEER" | "SPIRIT";
 
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  image?: string | null;
+
   Ingredient?: Ingredient[];
 
   @TypeGraphQL.Field(_type => SpiritCount, {

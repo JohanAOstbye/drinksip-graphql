@@ -35,5 +35,5 @@ export class FindManySpiritArgs {
   @TypeGraphQL.Field(_type => [SpiritScalarFieldEnum], {
     nullable: true
   })
-  distinct?: Array<"alcoholContent" | "id" | "ingredients" | "name" | "nameLong" | "sugar" | "volume" | "volumeType" | "type"> | undefined;
+  distinct?: Array<"alcoholContent" | "id" | "ingredients" | "name" | "nameLong" | "sugar" | "volume" | "volumeType" | "type" | "image"> | undefined;
 }

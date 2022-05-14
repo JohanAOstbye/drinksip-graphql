@@ -25,6 +25,11 @@ export class IngredientCountAggregate {
   @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
     nullable: false
   })
+  image!: number;
+
+  @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+    nullable: false
+  })
   spiritId!: number;
 
   @TypeGraphQL.Field(_type => TypeGraphQL.Int, {

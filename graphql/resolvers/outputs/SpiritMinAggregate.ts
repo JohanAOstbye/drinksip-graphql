@@ -52,4 +52,9 @@ export class SpiritMinAggregate {
     nullable: true
   })
   type!: "WINE" | "BEER" | "SPIRIT" | null;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  image!: string | null;
 }

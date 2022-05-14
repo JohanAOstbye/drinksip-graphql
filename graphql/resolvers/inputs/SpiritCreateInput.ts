@@ -66,6 +66,11 @@ export class SpiritCreateInput {
   })
   type!: "WINE" | "BEER" | "SPIRIT";
 
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  image?: string | undefined;
+
   @TypeGraphQL.Field(_type => IngredientCreateNestedManyWithoutSpiritInput, {
     nullable: true
   })

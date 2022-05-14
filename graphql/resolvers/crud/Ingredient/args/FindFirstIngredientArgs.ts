@@ -35,5 +35,5 @@ export class FindFirstIngredientArgs {
   @TypeGraphQL.Field(_type => [IngredientScalarFieldEnum], {
     nullable: true
   })
-  distinct?: Array<"id" | "name" | "type" | "spiritId"> | undefined;
+  distinct?: Array<"id" | "name" | "type" | "image" | "spiritId"> | undefined;
 }

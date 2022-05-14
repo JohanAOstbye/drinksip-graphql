@@ -60,6 +60,7 @@ model Spirit {
     volume         Float
     volumeType     String?
     type           SpiritType
+    image          String?
     Ingredient     Ingredient[]
 }
 
@@ -73,6 +74,7 @@ model Ingredient {
     id                String              @id @default(auto()) @map("_id") @db.ObjectId
     name              String
     type              String
+    image             String?
     spirit            Spirit?             @relation(fields: [spiritId], references: [id])
     spiritId          String?             @db.ObjectId
     IngredientMeasure IngredientMeasure[]

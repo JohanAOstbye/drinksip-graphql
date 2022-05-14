@@ -25,5 +25,10 @@ export class IngredientMaxAggregate {
   @TypeGraphQL.Field(_type => String, {
     nullable: true
   })
+  image!: string | null;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
   spiritId!: string | null;
 }

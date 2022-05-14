@@ -25,6 +25,11 @@ export class Ingredient {
   })
   type!: string;
 
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  image?: string | null;
+
   spirit?: Spirit | null;
 
   @TypeGraphQL.Field(_type => String, {

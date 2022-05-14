@@ -24,6 +24,11 @@ export class IngredientCreateInput {
   })
   type!: string;
 
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  image?: string | undefined;
+
   @TypeGraphQL.Field(_type => SpiritCreateNestedOneWithoutIngredientInput, {
     nullable: true
   })

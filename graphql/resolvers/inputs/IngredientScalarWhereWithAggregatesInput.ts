@@ -42,5 +42,10 @@ export class IngredientScalarWhereWithAggregatesInput {
   @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
     nullable: true
   })
+  image?: StringNullableWithAggregatesFilter | undefined;
+
+  @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
+    nullable: true
+  })
   spiritId?: StringNullableWithAggregatesFilter | undefined;
 }

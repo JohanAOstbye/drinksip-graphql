@@ -58,6 +58,11 @@ export class SpiritGroupBy {
   })
   type!: "WINE" | "BEER" | "SPIRIT";
 
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  image!: string | null;
+
   @TypeGraphQL.Field(_type => SpiritCountAggregate, {
     nullable: true
   })

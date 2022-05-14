@@ -52,4 +52,9 @@ export class SpiritCountOrderByAggregateInput {
     nullable: true
   })
   type?: "asc" | "desc" | undefined;
+
+  @TypeGraphQL.Field(_type => SortOrder, {
+    nullable: true
+  })
+  image?: "asc" | "desc" | undefined;
 }

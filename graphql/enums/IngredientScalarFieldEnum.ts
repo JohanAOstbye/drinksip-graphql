@@ -4,6 +4,7 @@ export enum IngredientScalarFieldEnum {
   id = "id",
   name = "name",
   type = "type",
+  image = "image",
   spiritId = "spiritId"
 }
 TypeGraphQL.registerEnumType(IngredientScalarFieldEnum, {

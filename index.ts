@@ -6,6 +6,7 @@ import { ApolloServer } from 'apollo-server-express';
 import cors from 'cors';
 import { resolvers } from './graphql';
 import { prisma } from './prisma';
+import { CustomAllResolver } from './custom/customResolver';
 
 const PORT = process.env.PORT || 4000;
 
@@ -13,7 +14,7 @@ const start = async () => {
   const app = express();
   app.use(cors());
   const schema = await buildSchema({
-    resolvers,
+    resolvers: [...resolvers, CustomAllResolver],
   });
 
   const apolloServer = new ApolloServer({

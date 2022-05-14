@@ -41,6 +41,11 @@ export class IngredientWhereInput {
   })
   type?: StringFilter | undefined;
 
+  @TypeGraphQL.Field(_type => StringNullableFilter, {
+    nullable: true
+  })
+  image?: StringNullableFilter | undefined;
+
   @TypeGraphQL.Field(_type => SpiritRelationFilter, {
     nullable: true
   })

@@ -20,7 +20,7 @@ export class GroupByIngredientArgs {
   @TypeGraphQL.Field(_type => [IngredientScalarFieldEnum], {
     nullable: false
   })
-  by!: Array<"id" | "name" | "type" | "spiritId">;
+  by!: Array<"id" | "name" | "type" | "image" | "spiritId">;
 
   @TypeGraphQL.Field(_type => IngredientScalarWhereWithAggregatesInput, {
     nullable: true

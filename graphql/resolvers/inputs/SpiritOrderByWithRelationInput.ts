@@ -66,6 +66,11 @@ export class SpiritOrderByWithRelationInput {
   })
   type?: "asc" | "desc" | undefined;
 
+  @TypeGraphQL.Field(_type => SortOrder, {
+    nullable: true
+  })
+  image?: "asc" | "desc" | undefined;
+
   @TypeGraphQL.Field(_type => IngredientOrderByRelationAggregateInput, {
     nullable: true
   })

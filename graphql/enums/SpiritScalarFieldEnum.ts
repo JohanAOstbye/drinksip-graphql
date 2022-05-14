@@ -9,7 +9,8 @@ export enum SpiritScalarFieldEnum {
   sugar = "sugar",
   volume = "volume",
   volumeType = "volumeType",
-  type = "type"
+  type = "type",
+  image = "image"
 }
 TypeGraphQL.registerEnumType(SpiritScalarFieldEnum, {
   name: "SpiritScalarFieldEnum",

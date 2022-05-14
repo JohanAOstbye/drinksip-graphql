@@ -21,4 +21,9 @@ export class IngredientCreateManySpiritInput {
     nullable: false
   })
   type!: string;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  image?: string | undefined;
 }

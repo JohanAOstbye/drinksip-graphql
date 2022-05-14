@@ -84,6 +84,11 @@ export class SpiritWhereInput {
   })
   type?: EnumSpiritTypeFilter | undefined;
 
+  @TypeGraphQL.Field(_type => StringNullableFilter, {
+    nullable: true
+  })
+  image?: StringNullableFilter | undefined;
+
   @TypeGraphQL.Field(_type => IngredientListRelationFilter, {
     nullable: true
   })

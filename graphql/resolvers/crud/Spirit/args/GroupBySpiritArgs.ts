@@ -20,7 +20,7 @@ export class GroupBySpiritArgs {
   @TypeGraphQL.Field(_type => [SpiritScalarFieldEnum], {
     nullable: false
   })
-  by!: Array<"alcoholContent" | "id" | "ingredients" | "name" | "nameLong" | "sugar" | "volume" | "volumeType" | "type">;
+  by!: Array<"alcoholContent" | "id" | "ingredients" | "name" | "nameLong" | "sugar" | "volume" | "volumeType" | "type" | "image">;
 
   @TypeGraphQL.Field(_type => SpiritScalarWhereWithAggregatesInput, {
     nullable: true

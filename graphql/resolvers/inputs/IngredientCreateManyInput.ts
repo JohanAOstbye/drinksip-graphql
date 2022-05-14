@@ -25,5 +25,10 @@ export class IngredientCreateManyInput {
   @TypeGraphQL.Field(_type => String, {
     nullable: true
   })
+  image?: string | undefined;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
   spiritId?: string | undefined;
 }

@@ -64,6 +64,11 @@ export class SpiritUpdateInput {
   })
   type?: EnumSpiritTypeFieldUpdateOperationsInput | undefined;
 
+  @TypeGraphQL.Field(_type => NullableStringFieldUpdateOperationsInput, {
+    nullable: true
+  })
+  image?: NullableStringFieldUpdateOperationsInput | undefined;
+
   @TypeGraphQL.Field(_type => IngredientUpdateManyWithoutSpiritInput, {
     nullable: true
   })

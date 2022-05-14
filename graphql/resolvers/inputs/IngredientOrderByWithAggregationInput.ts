@@ -29,6 +29,11 @@ export class IngredientOrderByWithAggregationInput {
   @TypeGraphQL.Field(_type => SortOrder, {
     nullable: true
   })
+  image?: "asc" | "desc" | undefined;
+
+  @TypeGraphQL.Field(_type => SortOrder, {
+    nullable: true
+  })
   spiritId?: "asc" | "desc" | undefined;
 
   @TypeGraphQL.Field(_type => IngredientCountOrderByAggregateInput, {

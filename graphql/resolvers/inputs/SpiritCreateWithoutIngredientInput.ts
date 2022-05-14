@@ -64,4 +64,9 @@ export class SpiritCreateWithoutIngredientInput {
     nullable: false
   })
   type!: "WINE" | "BEER" | "SPIRIT";
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  image?: string | undefined;
 }
