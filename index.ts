@@ -34,7 +34,7 @@ const start = async () => {
     res.send('Moren din!');
   });
 
-  app.listen(8080, () => {
+  app.listen(PORT, () => {
     console.log('Server started');
   });
 };
