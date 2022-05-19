@@ -35,5 +35,5 @@ export class FindManyDrinkArgs {
   @TypeGraphQL.Field(_type => [DrinkScalarFieldEnum], {
     nullable: true
   })
-  distinct?: Array<"IBA" | "alcoholic" | "category" | "dateModified" | "glass" | "id" | "image" | "instructions" | "name" | "tags"> | undefined;
+  distinct?: Array<"IBA" | "alcoholic" | "category" | "dateModified" | "glass" | "id" | "image" | "instructions" | "name" | "tags" | "userId" | "favUserId"> | undefined;
 }

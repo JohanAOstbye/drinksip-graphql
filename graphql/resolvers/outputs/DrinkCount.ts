@@ -11,4 +11,9 @@ export class DrinkCount {
     nullable: false
   })
   ingredients!: number;
+
+  @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+    nullable: false
+  })
+  reviews!: number;
 }

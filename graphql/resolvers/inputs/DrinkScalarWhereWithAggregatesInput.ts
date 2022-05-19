@@ -75,4 +75,14 @@ export class DrinkScalarWhereWithAggregatesInput {
     nullable: true
   })
   tags?: StringNullableListFilter | undefined;
+
+  @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
+    nullable: true
+  })
+  userId?: StringNullableWithAggregatesFilter | undefined;
+
+  @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
+    nullable: true
+  })
+  favUserId?: StringNullableWithAggregatesFilter | undefined;
 }

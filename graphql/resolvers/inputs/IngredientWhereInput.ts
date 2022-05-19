@@ -59,5 +59,5 @@ export class IngredientWhereInput {
   @TypeGraphQL.Field(_type => IngredientMeasureListRelationFilter, {
     nullable: true
   })
-  IngredientMeasure?: IngredientMeasureListRelationFilter | undefined;
+  ingredientMeasure?: IngredientMeasureListRelationFilter | undefined;
 }

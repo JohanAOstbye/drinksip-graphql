@@ -26,7 +26,7 @@ export class IngredientMeasure {
   })
   ingredientId?: string | null;
 
-  Drink?: Drink | null;
+  drink?: Drink | null;
 
   @TypeGraphQL.Field(_type => String, {
     nullable: true

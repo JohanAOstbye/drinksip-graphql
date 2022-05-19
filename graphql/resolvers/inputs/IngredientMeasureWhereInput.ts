@@ -49,7 +49,7 @@ export class IngredientMeasureWhereInput {
   @TypeGraphQL.Field(_type => DrinkRelationFilter, {
     nullable: true
   })
-  Drink?: DrinkRelationFilter | undefined;
+  drink?: DrinkRelationFilter | undefined;
 
   @TypeGraphQL.Field(_type => StringNullableFilter, {
     nullable: true

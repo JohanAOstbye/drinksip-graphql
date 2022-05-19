@@ -3,6 +3,8 @@ import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { IngredientMeasureOrderByRelationAggregateInput } from "../inputs/IngredientMeasureOrderByRelationAggregateInput";
+import { ReviewOrderByRelationAggregateInput } from "../inputs/ReviewOrderByRelationAggregateInput";
+import { UserOrderByWithRelationInput } from "../inputs/UserOrderByWithRelationInput";
 import { SortOrder } from "../../enums/SortOrder";
 
 @TypeGraphQL.InputType("DrinkOrderByWithRelationInput", {
@@ -63,4 +65,29 @@ export class DrinkOrderByWithRelationInput {
     nullable: true
   })
   tags?: "asc" | "desc" | undefined;
+
+  @TypeGraphQL.Field(_type => UserOrderByWithRelationInput, {
+    nullable: true
+  })
+  createdBy?: UserOrderByWithRelationInput | undefined;
+
+  @TypeGraphQL.Field(_type => SortOrder, {
+    nullable: true
+  })
+  userId?: "asc" | "desc" | undefined;
+
+  @TypeGraphQL.Field(_type => UserOrderByWithRelationInput, {
+    nullable: true
+  })
+  favorittedBy?: UserOrderByWithRelationInput | undefined;
+
+  @TypeGraphQL.Field(_type => SortOrder, {
+    nullable: true
+  })
+  favUserId?: "asc" | "desc" | undefined;
+
+  @TypeGraphQL.Field(_type => ReviewOrderByRelationAggregateInput, {
+    nullable: true
+  })
+  reviews?: ReviewOrderByRelationAggregateInput | undefined;
 }

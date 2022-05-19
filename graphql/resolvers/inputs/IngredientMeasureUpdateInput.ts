@@ -23,5 +23,5 @@ export class IngredientMeasureUpdateInput {
   @TypeGraphQL.Field(_type => DrinkUpdateOneWithoutIngredientsInput, {
     nullable: true
   })
-  Drink?: DrinkUpdateOneWithoutIngredientsInput | undefined;
+  drink?: DrinkUpdateOneWithoutIngredientsInput | undefined;
 }

@@ -25,6 +25,11 @@ model Drink {
     instructions String
     name         String?
     tags         String[]
+    createdBy    User?               @relation(fields: [userId], references: [id])
+    userId       String?             @db.ObjectId
+    favorittedBy User?               @relation(fields: [favUserId], references: [id], name: "fav")
+    favUserId    String?             @db.ObjectId
+    reviews      Review[]
 }
 
 model IngredientMeasure {
@@ -32,7 +37,7 @@ model IngredientMeasure {
     measure      String?
     ingredient   Ingredient? @relation(fields: [ingredientId], references: [id])
     ingredientId String?     @db.ObjectId
-    Drink        Drink?      @relation(fields: [drinkId], references: [id])
+    drink        Drink?      @relation(fields: [drinkId], references: [id])
     drinkId      String?     @db.ObjectId
 }
 
@@ -64,6 +69,15 @@ model Spirit {
     Ingredient     Ingredient[]
 }
 
+model Review {
+    id      String @id @default(auto()) @map("_id") @db.ObjectId
+    rating  Int
+    rater   User   @relation(fields: [userId], references: [id])
+    userId  String @db.ObjectId
+    drink   Drink  @relation(fields: [drinkId], references: [id])
+    drinkId String @db.ObjectId
+}
+
 enum SpiritType {
     WINE
     BEER
@@ -77,5 +91,16 @@ model Ingredient {
     image             String?
     spirit            Spirit?             @relation(fields: [spiritId], references: [id])
     spiritId          String?             @db.ObjectId
-    IngredientMeasure IngredientMeasure[]
+    ingredientMeasure IngredientMeasure[]
+}
+
+model User {
+    id            String    @id @default(auto()) @map("_id") @db.ObjectId
+    name          String?
+    email         String?   @unique
+    emailVerified DateTime?
+    image         String?
+    favorites     Drink[]   @relation(name: "fav")
+    created       Drink[]
+    review        Review[]
 }

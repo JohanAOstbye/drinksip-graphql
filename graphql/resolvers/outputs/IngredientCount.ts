@@ -10,5 +10,5 @@ export class IngredientCount {
   @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
     nullable: false
   })
-  IngredientMeasure!: number;
+  ingredientMeasure!: number;
 }

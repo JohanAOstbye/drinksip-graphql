@@ -60,5 +60,15 @@ export class DrinkCountAggregate {
   @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
     nullable: false
   })
+  userId!: number;
+
+  @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+    nullable: false
+  })
+  favUserId!: number;
+
+  @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+    nullable: false
+  })
   _all!: number;
 }

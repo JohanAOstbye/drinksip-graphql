@@ -1,17 +1,15 @@
 import { GraphQLResolveInfo } from 'graphql';
 import {
   Args,
-  ArgsType,
   Ctx,
-  Field,
+  FieldResolver,
   Info,
-  InputType,
   Int,
-  ObjectType,
   Query,
-  registerEnumType,
   Resolver,
+  Root,
 } from 'type-graphql';
+import { Drink } from '../graphql';
 import { getPrismaFromContext } from '../graphql/helpers';
 import { FindManyCombiArgs } from './args';
 import { CombiScalarFieldEnum } from './enums';
@@ -36,5 +34,29 @@ export class CustomAllResolver {
       ...maptoSimple(drinks, CombiScalarFieldEnum.DRINK),
       ...maptoSimple(ingredients, CombiScalarFieldEnum.INGREDIENT),
     ];
+  }
+}
+
+@Resolver((of) => Drink)
+export class CustomDrinkResolver {
+  @FieldResolver((type) => Int, { nullable: true })
+  async rating(
+    @Root() drink: Drink,
+    @Ctx() { prisma }: any
+  ): Promise<number | undefined> {
+    const reviews = (
+      await prisma.drink.findUnique({
+        where: { id: drink.id },
+        select: { reviews: { select: { rating: true } } },
+      })
+    ).reviews;
+
+    const rating =
+      reviews.reduce(
+        (total: number, rating: { rating: number }) => total + rating.rating,
+        0
+      ) / reviews.length;
+
+    return rating;
   }
 }

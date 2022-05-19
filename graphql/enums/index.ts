@@ -2,6 +2,8 @@ export { DrinkScalarFieldEnum } from "./DrinkScalarFieldEnum";
 export { IngredientMeasureScalarFieldEnum } from "./IngredientMeasureScalarFieldEnum";
 export { IngredientScalarFieldEnum } from "./IngredientScalarFieldEnum";
 export { QueryMode } from "./QueryMode";
+export { ReviewScalarFieldEnum } from "./ReviewScalarFieldEnum";
 export { SortOrder } from "./SortOrder";
 export { SpiritScalarFieldEnum } from "./SpiritScalarFieldEnum";
 export { SpiritType } from "./SpiritType";
+export { UserScalarFieldEnum } from "./UserScalarFieldEnum";

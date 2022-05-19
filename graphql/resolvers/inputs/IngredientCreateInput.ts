@@ -37,5 +37,5 @@ export class IngredientCreateInput {
   @TypeGraphQL.Field(_type => IngredientMeasureCreateNestedManyWithoutIngredientInput, {
     nullable: true
   })
-  IngredientMeasure?: IngredientMeasureCreateNestedManyWithoutIngredientInput | undefined;
+  ingredientMeasure?: IngredientMeasureCreateNestedManyWithoutIngredientInput | undefined;
 }

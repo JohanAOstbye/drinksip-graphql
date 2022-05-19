@@ -20,11 +20,11 @@ export class IngredientMeasureRelationsResolver {
   @TypeGraphQL.FieldResolver(_type => Drink, {
     nullable: true
   })
-  async Drink(@TypeGraphQL.Root() ingredientMeasure: IngredientMeasure, @TypeGraphQL.Ctx() ctx: any): Promise<Drink | null> {
+  async drink(@TypeGraphQL.Root() ingredientMeasure: IngredientMeasure, @TypeGraphQL.Ctx() ctx: any): Promise<Drink | null> {
     return getPrismaFromContext(ctx).ingredientMeasure.findUnique({
       where: {
         id: ingredientMeasure.id,
       },
-    }).Drink({});
+    }).drink({});
   }
 }

@@ -28,5 +28,5 @@ export class IngredientUpdateWithoutSpiritInput {
   @TypeGraphQL.Field(_type => IngredientMeasureUpdateManyWithoutIngredientInput, {
     nullable: true
   })
-  IngredientMeasure?: IngredientMeasureUpdateManyWithoutIngredientInput | undefined;
+  ingredientMeasure?: IngredientMeasureUpdateManyWithoutIngredientInput | undefined;
 }

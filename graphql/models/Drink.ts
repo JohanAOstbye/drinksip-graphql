@@ -3,6 +3,8 @@ import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../scalars";
 import { IngredientMeasure } from "../models/IngredientMeasure";
+import { Review } from "../models/Review";
+import { User } from "../models/User";
 import { DrinkCount } from "../resolvers/outputs/DrinkCount";
 
 @TypeGraphQL.ObjectType("Drink", {
@@ -60,6 +62,22 @@ export class Drink {
     nullable: false
   })
   tags!: string[];
+
+  createdBy?: User | null;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  userId?: string | null;
+
+  favorittedBy?: User | null;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  favUserId?: string | null;
+
+  reviews?: Review[];
 
   @TypeGraphQL.Field(_type => DrinkCount, {
     nullable: true

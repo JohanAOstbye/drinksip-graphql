@@ -33,7 +33,7 @@ export class IngredientMeasureOrderByWithRelationInput {
   @TypeGraphQL.Field(_type => DrinkOrderByWithRelationInput, {
     nullable: true
   })
-  Drink?: DrinkOrderByWithRelationInput | undefined;
+  drink?: DrinkOrderByWithRelationInput | undefined;
 
   @TypeGraphQL.Field(_type => SortOrder, {
     nullable: true

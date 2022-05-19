@@ -7,7 +7,10 @@ import { DrinkUpdatecategoryInput } from "../inputs/DrinkUpdatecategoryInput";
 import { DrinkUpdatetagsInput } from "../inputs/DrinkUpdatetagsInput";
 import { IngredientMeasureUpdateManyWithoutDrinkInput } from "../inputs/IngredientMeasureUpdateManyWithoutDrinkInput";
 import { NullableStringFieldUpdateOperationsInput } from "../inputs/NullableStringFieldUpdateOperationsInput";
+import { ReviewUpdateManyWithoutDrinkInput } from "../inputs/ReviewUpdateManyWithoutDrinkInput";
 import { StringFieldUpdateOperationsInput } from "../inputs/StringFieldUpdateOperationsInput";
+import { UserUpdateOneWithoutCreatedInput } from "../inputs/UserUpdateOneWithoutCreatedInput";
+import { UserUpdateOneWithoutFavoritesInput } from "../inputs/UserUpdateOneWithoutFavoritesInput";
 
 @TypeGraphQL.InputType("DrinkUpdateInput", {
   isAbstract: true
@@ -62,4 +65,19 @@ export class DrinkUpdateInput {
     nullable: true
   })
   tags?: DrinkUpdatetagsInput | undefined;
+
+  @TypeGraphQL.Field(_type => UserUpdateOneWithoutCreatedInput, {
+    nullable: true
+  })
+  createdBy?: UserUpdateOneWithoutCreatedInput | undefined;
+
+  @TypeGraphQL.Field(_type => UserUpdateOneWithoutFavoritesInput, {
+    nullable: true
+  })
+  favorittedBy?: UserUpdateOneWithoutFavoritesInput | undefined;
+
+  @TypeGraphQL.Field(_type => ReviewUpdateManyWithoutDrinkInput, {
+    nullable: true
+  })
+  reviews?: ReviewUpdateManyWithoutDrinkInput | undefined;
 }

@@ -43,5 +43,5 @@ export class IngredientOrderByWithRelationInput {
   @TypeGraphQL.Field(_type => IngredientMeasureOrderByRelationAggregateInput, {
     nullable: true
   })
-  IngredientMeasure?: IngredientMeasureOrderByRelationAggregateInput | undefined;
+  ingredientMeasure?: IngredientMeasureOrderByRelationAggregateInput | undefined;
 }

@@ -37,7 +37,7 @@ export class Ingredient {
   })
   spiritId?: string | null;
 
-  IngredientMeasure?: IngredientMeasure[];
+  ingredientMeasure?: IngredientMeasure[];
 
   @TypeGraphQL.Field(_type => IngredientCount, {
     nullable: true

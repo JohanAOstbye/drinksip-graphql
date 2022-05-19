@@ -10,7 +10,9 @@ export enum DrinkScalarFieldEnum {
   image = "image",
   instructions = "instructions",
   name = "name",
-  tags = "tags"
+  tags = "tags",
+  userId = "userId",
+  favUserId = "favUserId"
 }
 TypeGraphQL.registerEnumType(DrinkScalarFieldEnum, {
   name: "DrinkScalarFieldEnum",

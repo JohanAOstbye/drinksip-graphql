@@ -20,7 +20,7 @@ export class GroupByDrinkArgs {
   @TypeGraphQL.Field(_type => [DrinkScalarFieldEnum], {
     nullable: false
   })
-  by!: Array<"IBA" | "alcoholic" | "category" | "dateModified" | "glass" | "id" | "image" | "instructions" | "name" | "tags">;
+  by!: Array<"IBA" | "alcoholic" | "category" | "dateModified" | "glass" | "id" | "image" | "instructions" | "name" | "tags" | "userId" | "favUserId">;
 
   @TypeGraphQL.Field(_type => DrinkScalarWhereWithAggregatesInput, {
     nullable: true

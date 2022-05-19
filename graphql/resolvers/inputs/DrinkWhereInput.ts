@@ -4,9 +4,11 @@ import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { DateTimeFilter } from "../inputs/DateTimeFilter";
 import { IngredientMeasureListRelationFilter } from "../inputs/IngredientMeasureListRelationFilter";
+import { ReviewListRelationFilter } from "../inputs/ReviewListRelationFilter";
 import { StringFilter } from "../inputs/StringFilter";
 import { StringNullableFilter } from "../inputs/StringNullableFilter";
 import { StringNullableListFilter } from "../inputs/StringNullableListFilter";
+import { UserRelationFilter } from "../inputs/UserRelationFilter";
 
 @TypeGraphQL.InputType("DrinkWhereInput", {
   isAbstract: true
@@ -81,4 +83,29 @@ export class DrinkWhereInput {
     nullable: true
   })
   tags?: StringNullableListFilter | undefined;
+
+  @TypeGraphQL.Field(_type => UserRelationFilter, {
+    nullable: true
+  })
+  createdBy?: UserRelationFilter | undefined;
+
+  @TypeGraphQL.Field(_type => StringNullableFilter, {
+    nullable: true
+  })
+  userId?: StringNullableFilter | undefined;
+
+  @TypeGraphQL.Field(_type => UserRelationFilter, {
+    nullable: true
+  })
+  favorittedBy?: UserRelationFilter | undefined;
+
+  @TypeGraphQL.Field(_type => StringNullableFilter, {
+    nullable: true
+  })
+  favUserId?: StringNullableFilter | undefined;
+
+  @TypeGraphQL.Field(_type => ReviewListRelationFilter, {
+    nullable: true
+  })
+  reviews?: ReviewListRelationFilter | undefined;
 }

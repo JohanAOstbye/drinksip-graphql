@@ -46,4 +46,14 @@ export class DrinkMinAggregate {
     nullable: true
   })
   name!: string | null;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  userId!: string | null;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  favUserId!: string | null;
 }

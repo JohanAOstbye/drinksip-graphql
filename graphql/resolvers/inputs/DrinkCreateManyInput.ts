@@ -58,4 +58,14 @@ export class DrinkCreateManyInput {
     nullable: true
   })
   tags?: DrinkCreatetagsInput | undefined;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  userId?: string | undefined;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  favUserId?: string | undefined;
 }

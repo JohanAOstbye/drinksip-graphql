@@ -21,11 +21,11 @@ export class IngredientRelationsResolver {
   @TypeGraphQL.FieldResolver(_type => [IngredientMeasure], {
     nullable: false
   })
-  async IngredientMeasure(@TypeGraphQL.Root() ingredient: Ingredient, @TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Args() args: IngredientIngredientMeasureArgs): Promise<IngredientMeasure[]> {
+  async ingredientMeasure(@TypeGraphQL.Root() ingredient: Ingredient, @TypeGraphQL.Ctx() ctx: any, @TypeGraphQL.Args() args: IngredientIngredientMeasureArgs): Promise<IngredientMeasure[]> {
     return getPrismaFromContext(ctx).ingredient.findUnique({
       where: {
         id: ingredient.id,
       },
-    }).IngredientMeasure(args);
+    }).ingredientMeasure(args);
   }
 }

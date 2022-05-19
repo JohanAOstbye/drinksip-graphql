@@ -60,6 +60,16 @@ export class DrinkGroupBy {
   })
   tags!: string[] | null;
 
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  userId!: string | null;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  favUserId!: string | null;
+
   @TypeGraphQL.Field(_type => DrinkCountAggregate, {
     nullable: true
   })

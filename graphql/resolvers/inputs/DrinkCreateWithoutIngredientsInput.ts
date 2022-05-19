@@ -4,6 +4,9 @@ import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { DrinkCreatecategoryInput } from "../inputs/DrinkCreatecategoryInput";
 import { DrinkCreatetagsInput } from "../inputs/DrinkCreatetagsInput";
+import { ReviewCreateNestedManyWithoutDrinkInput } from "../inputs/ReviewCreateNestedManyWithoutDrinkInput";
+import { UserCreateNestedOneWithoutCreatedInput } from "../inputs/UserCreateNestedOneWithoutCreatedInput";
+import { UserCreateNestedOneWithoutFavoritesInput } from "../inputs/UserCreateNestedOneWithoutFavoritesInput";
 
 @TypeGraphQL.InputType("DrinkCreateWithoutIngredientsInput", {
   isAbstract: true
@@ -58,4 +61,19 @@ export class DrinkCreateWithoutIngredientsInput {
     nullable: true
   })
   tags?: DrinkCreatetagsInput | undefined;
+
+  @TypeGraphQL.Field(_type => UserCreateNestedOneWithoutCreatedInput, {
+    nullable: true
+  })
+  createdBy?: UserCreateNestedOneWithoutCreatedInput | undefined;
+
+  @TypeGraphQL.Field(_type => UserCreateNestedOneWithoutFavoritesInput, {
+    nullable: true
+  })
+  favorittedBy?: UserCreateNestedOneWithoutFavoritesInput | undefined;
+
+  @TypeGraphQL.Field(_type => ReviewCreateNestedManyWithoutDrinkInput, {
+    nullable: true
+  })
+  reviews?: ReviewCreateNestedManyWithoutDrinkInput | undefined;
 }
