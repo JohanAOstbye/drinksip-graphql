@@ -18,9 +18,9 @@ export class ReviewCreateManyInput {
   rating!: number;
 
   @TypeGraphQL.Field(_type => String, {
-    nullable: false
+    nullable: true
   })
-  userId!: string;
+  userId?: string | undefined;
 
   @TypeGraphQL.Field(_type => String, {
     nullable: false

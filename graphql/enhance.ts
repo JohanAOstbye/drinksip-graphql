@@ -632,7 +632,7 @@ const inputsInfo = {
   UserCreateNestedOneWithoutReviewInput: ["create", "connectOrCreate", "connect"],
   DrinkCreateNestedOneWithoutReviewsInput: ["create", "connectOrCreate", "connect"],
   IntFieldUpdateOperationsInput: ["set", "increment", "decrement", "multiply", "divide"],
-  UserUpdateOneRequiredWithoutReviewInput: ["create", "connectOrCreate", "upsert", "connect", "update"],
+  UserUpdateOneWithoutReviewInput: ["create", "connectOrCreate", "upsert", "disconnect", "delete", "connect", "update"],
   DrinkUpdateOneRequiredWithoutReviewsInput: ["create", "connectOrCreate", "upsert", "connect", "update"],
   SpiritCreateNestedOneWithoutIngredientInput: ["create", "connectOrCreate", "connect"],
   IngredientMeasureCreateNestedManyWithoutIngredientInput: ["create", "connectOrCreate", "createMany", "connect"],

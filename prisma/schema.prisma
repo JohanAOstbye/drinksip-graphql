@@ -70,12 +70,12 @@ model Spirit {
 }
 
 model Review {
-    id      String @id @default(auto()) @map("_id") @db.ObjectId
+    id      String  @id @default(auto()) @map("_id") @db.ObjectId
     rating  Int
-    rater   User   @relation(fields: [userId], references: [id])
-    userId  String @db.ObjectId
-    drink   Drink  @relation(fields: [drinkId], references: [id])
-    drinkId String @db.ObjectId
+    rater   User?   @relation(fields: [userId], references: [id])
+    userId  String? @db.ObjectId
+    drink   Drink   @relation(fields: [drinkId], references: [id])
+    drinkId String  @db.ObjectId
 }
 
 enum SpiritType {

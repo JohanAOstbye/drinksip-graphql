@@ -4,7 +4,7 @@ import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 import { DrinkUpdateOneRequiredWithoutReviewsInput } from "../inputs/DrinkUpdateOneRequiredWithoutReviewsInput";
 import { IntFieldUpdateOperationsInput } from "../inputs/IntFieldUpdateOperationsInput";
-import { UserUpdateOneRequiredWithoutReviewInput } from "../inputs/UserUpdateOneRequiredWithoutReviewInput";
+import { UserUpdateOneWithoutReviewInput } from "../inputs/UserUpdateOneWithoutReviewInput";
 
 @TypeGraphQL.InputType("ReviewUpdateInput", {
   isAbstract: true
@@ -15,10 +15,10 @@ export class ReviewUpdateInput {
   })
   rating?: IntFieldUpdateOperationsInput | undefined;
 
-  @TypeGraphQL.Field(_type => UserUpdateOneRequiredWithoutReviewInput, {
+  @TypeGraphQL.Field(_type => UserUpdateOneWithoutReviewInput, {
     nullable: true
   })
-  rater?: UserUpdateOneRequiredWithoutReviewInput | undefined;
+  rater?: UserUpdateOneWithoutReviewInput | undefined;
 
   @TypeGraphQL.Field(_type => DrinkUpdateOneRequiredWithoutReviewsInput, {
     nullable: true

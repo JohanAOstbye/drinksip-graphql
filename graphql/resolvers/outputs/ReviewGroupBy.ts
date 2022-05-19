@@ -23,9 +23,9 @@ export class ReviewGroupBy {
   rating!: number;
 
   @TypeGraphQL.Field(_type => String, {
-    nullable: false
+    nullable: true
   })
-  userId!: string;
+  userId!: string | null;
 
   @TypeGraphQL.Field(_type => String, {
     nullable: false

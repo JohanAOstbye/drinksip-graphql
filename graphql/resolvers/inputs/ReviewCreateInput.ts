@@ -20,9 +20,9 @@ export class ReviewCreateInput {
   rating!: number;
 
   @TypeGraphQL.Field(_type => UserCreateNestedOneWithoutReviewInput, {
-    nullable: false
+    nullable: true
   })
-  rater!: UserCreateNestedOneWithoutReviewInput;
+  rater?: UserCreateNestedOneWithoutReviewInput | undefined;
 
   @TypeGraphQL.Field(_type => DrinkCreateNestedOneWithoutReviewsInput, {
     nullable: false

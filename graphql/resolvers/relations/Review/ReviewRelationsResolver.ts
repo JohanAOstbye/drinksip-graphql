@@ -7,9 +7,9 @@ import { transformFields, getPrismaFromContext, transformCountFieldIntoSelectRel
 @TypeGraphQL.Resolver(_of => Review)
 export class ReviewRelationsResolver {
   @TypeGraphQL.FieldResolver(_type => User, {
-    nullable: false
+    nullable: true
   })
-  async rater(@TypeGraphQL.Root() review: Review, @TypeGraphQL.Ctx() ctx: any): Promise<User> {
+  async rater(@TypeGraphQL.Root() review: Review, @TypeGraphQL.Ctx() ctx: any): Promise<User | null> {
     return getPrismaFromContext(ctx).review.findUnique({
       where: {
         id: review.id,

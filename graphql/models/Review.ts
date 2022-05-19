@@ -19,12 +19,12 @@ export class Review {
   })
   rating!: number;
 
-  rater?: User;
+  rater?: User | null;
 
   @TypeGraphQL.Field(_type => String, {
-    nullable: false
+    nullable: true
   })
-  userId!: string;
+  userId?: string | null;
 
   drink?: Drink;
 

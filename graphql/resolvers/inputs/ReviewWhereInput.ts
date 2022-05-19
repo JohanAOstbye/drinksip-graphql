@@ -5,6 +5,7 @@ import { DecimalJSScalar } from "../../scalars";
 import { DrinkRelationFilter } from "../inputs/DrinkRelationFilter";
 import { IntFilter } from "../inputs/IntFilter";
 import { StringFilter } from "../inputs/StringFilter";
+import { StringNullableFilter } from "../inputs/StringNullableFilter";
 import { UserRelationFilter } from "../inputs/UserRelationFilter";
 
 @TypeGraphQL.InputType("ReviewWhereInput", {
@@ -41,10 +42,10 @@ export class ReviewWhereInput {
   })
   rater?: UserRelationFilter | undefined;
 
-  @TypeGraphQL.Field(_type => StringFilter, {
+  @TypeGraphQL.Field(_type => StringNullableFilter, {
     nullable: true
   })
-  userId?: StringFilter | undefined;
+  userId?: StringNullableFilter | undefined;
 
   @TypeGraphQL.Field(_type => DrinkRelationFilter, {
     nullable: true
