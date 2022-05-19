@@ -51,6 +51,10 @@ export class CustomDrinkResolver {
       })
     ).reviews;
 
+    if (reviews.length == 0) {
+      return 0;
+    }
+
     const rating =
       reviews.reduce(
         (total: number, rating: { rating: number }) => total + rating.rating,
